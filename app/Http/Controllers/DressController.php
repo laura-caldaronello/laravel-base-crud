@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Dress; //che è il model
 
 class DressController extends Controller
 {
@@ -13,7 +14,11 @@ class DressController extends Controller
      */
     public function index()
     {
-        return view('vestiti');
+        $vestiti = Dress::all();
+        $data = [
+            'vestiti' => $vestiti
+        ];
+        return view('vestiti.index',$data);
     }
 
     /**
@@ -45,7 +50,11 @@ class DressController extends Controller
      */
     public function show($id)
     {
-        //
+        $vestito = Dress::find($id);
+        $data = [
+            'vestito' => $vestito
+        ];
+        return view('vestiti.dettagli',$data);
     }
 
     /**
