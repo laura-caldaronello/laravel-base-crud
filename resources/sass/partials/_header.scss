@@ -1,0 +1,14 @@
+header {
+    background-color: $color1;
+    h2 {
+        padding: calc(#{$margin-card} * 4);
+    }
+    h2, h3 {
+        display: inline-block;
+    }
+    a {
+        margin-right: 20px;
+        text-decoration: none;
+        color: $color2;
+    }
+}

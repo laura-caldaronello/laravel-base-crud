@@ -1,0 +1,33 @@
+.dresses-container {
+    @include flex-center;
+    flex-wrap: wrap;
+    width: 100%;
+    text-align: center;
+}
+
+.dress-card {
+    margin: $margin-card;
+    width: calc((100% / #{$howMany-cards}) - ((#{$howMany-cards} + 1) * #{$margin-card}));
+    background-color: $color1;
+    * {
+        margin-bottom: 10px;
+    }
+    img {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+    }
+    h3 {
+        text-transform: uppercase;
+    }
+}
+
+table {
+    margin: calc(4 * #{$margin-card});
+    width: calc(100% - 2 * (4 * #{$margin-card}));
+    tr {
+        & > * {
+            padding: #{$margin-card};
+        }
+    }
+}
