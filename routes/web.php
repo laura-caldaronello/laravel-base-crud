@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','HomeController@index')->name('pagina-home'); // controller "semplice" in cui indico il metodo
+
+Route::resource('/vestiti','DressController'); // controller complesso (comprende tutti i metodi)
