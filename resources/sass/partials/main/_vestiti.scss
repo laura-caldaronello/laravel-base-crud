@@ -22,7 +22,8 @@
     }
 }
 
-table {
+table,
+form {
     margin: calc(4 * #{$margin-card});
     width: calc(100% - 2 * (4 * #{$margin-card}));
     tr {

@@ -56,12 +56,14 @@ header a {
   text-transform: uppercase;
 }
 
-table {
+table,
+form {
   margin: calc(4 * 10px);
   width: calc(100% - 2 * (4 * 10px));
 }
 
-table tr > * {
+table tr > *,
+form tr > * {
   padding: 10px;
 }
 

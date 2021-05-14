@@ -2,13 +2,15 @@
 
 @section('title','vestiti')
 @section('css')
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="{{asset('css/app-vestiti.css')}}">
 @endsection
 
 @section('content')
 
-    <h1>Vestiti</h1>
+    <h1>
+        Vestiti
+        <a class="btn btn-primary" href="{{route('vestiti.create')}}">Inserisci un record</a>
+    </h1>
     <div class="table-responsive">
         <table class="tabel table-bordered table-striped table-hover">
             <tr>
