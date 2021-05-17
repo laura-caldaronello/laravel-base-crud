@@ -40,6 +40,13 @@ class DressController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $request->validate([
+            'type' => 'required|string|max:50',
+            'size' => 'required|string|max:5',
+            'price' => 'required|numeric|min:0.01|max:9999.99'
+        ]);
+
         $new_dress = new Dress();
         $new_dress->fill($data);
         $new_dress->save();
@@ -83,6 +90,13 @@ class DressController extends Controller
     public function update(Request $request,Dress $vestiti)
     {
         $data = $request->all();
+
+        $request->validate([
+            'type' => 'required|string|max:50',
+            'size' => 'required|string|max:5',
+            'price' => 'required|numeric|min:0.01|max:9999.99'
+        ]);
+
         $vestiti->update($data);
 
         return redirect()->route('vestiti.index',$vestiti);
