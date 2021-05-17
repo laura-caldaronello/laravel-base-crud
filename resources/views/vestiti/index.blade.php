@@ -24,7 +24,15 @@
                             <td>{{$vestito->id}}</td>
                             <td>{{$vestito->type}}</td>
                             <td>{{$vestito->price}} €</td>
-                            <td><a class="btn btn-primary" href="{{route('vestiti.show',['vestiti' => $vestito->id])}}">Scopri!</a></td>
+                            <td>
+                                <a class="btn btn-primary" href="{{route('vestiti.show',['vestiti' => $vestito->id])}}">Scopri!</a>
+                                <a class="btn btn-warning" href="{{route('vestiti.edit',['vestiti' => $vestito->id])}}">Modifica</a>
+                                <form class="special-form" action="{{route('vestiti.destroy',['vestiti' => $vestito->id])}}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger" type="submit">Elimina</button>                           
+                                </form>
+                            </td>
                         </tr>
                         
                 @endforeach

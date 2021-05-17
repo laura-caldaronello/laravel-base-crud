@@ -68,9 +68,9 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Dress $vestiti)
     {
-        //
+        return view('vestiti.update',compact('vestiti'));
     }
 
     /**
@@ -80,9 +80,12 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,Dress $vestiti)
     {
-        //
+        $data = $request->all();
+        $vestiti->update($data);
+
+        return redirect()->route('vestiti.index',$vestiti);
     }
 
     /**
@@ -91,8 +94,10 @@ class DressController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Dress $vestiti)
     {
-        //
+        $vestiti->delete();
+
+        return redirect()->route('vestiti.index');
     }
 }

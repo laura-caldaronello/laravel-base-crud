@@ -23,7 +23,7 @@
 }
 
 table,
-form {
+form:not(.special-form) {
     margin: calc(4 * #{$margin-card});
     width: calc(100% - 2 * (4 * #{$margin-card}));
     tr {
@@ -31,4 +31,7 @@ form {
             padding: #{$margin-card};
         }
     }
+}
+form.special-form{
+    display: inline-block;
 }

@@ -57,14 +57,18 @@ header a {
 }
 
 table,
-form {
+form:not(.special-form) {
   margin: calc(4 * 10px);
   width: calc(100% - 2 * (4 * 10px));
 }
 
 table tr > *,
-form tr > * {
+form:not(.special-form) tr > * {
   padding: 10px;
+}
+
+form.special-form {
+  display: inline-block;
 }
 
 footer {
